@@ -1,0 +1,277 @@
+/* Colores o alguna variable que se utilizara var5ias veces*/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --griSClaro: #dfe9f3;
+    --tercero: #0B8591;
+    }
+
+    /*Global*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /* 1rem = 10px*/
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient( to top , var(--griSClaro ) 0%, var(--blanco)100%);
+}
+
+/*Tipografia*/
+h1{
+    font-size: 4rem; 
+}
+h2{
+    font-size: 2.5rem; 
+}
+
+h3{
+    font-size: 1.5rem; 
+}
+
+h1,h2,h3{
+    text-align: center; 
+}
+.titulo{        
+    color: skyblue;                
+        }
+
+.titulo span {
+    font-size: 1rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1 rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 80%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px){
+    .boton {
+        width: auto;
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.sombra {
+    box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.87);
+    -webkit-box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.87);
+    -moz-box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.87);
+    background-color: var(--blanco);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/*Utilidades*/
+
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+/*Navegacion*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+ .navegacion-principal{    
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+ @media (min-width: 400px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+ }
+
+ .navegacion-principal a {
+     display:block;
+     text-align: center;
+     color: var(--blanco);
+     text-decoration: none;
+     font-size: 2rem;
+     font-weight: bold;
+     padding: 1rem;
+ }
+
+ .navegacion-principal a:hover{
+     background-color: var(--primario);
+     color: var(--oscuro);
+ }
+
+ /*Hero o Imagen*/
+.hero{
+    background-image: url(../img/inicio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;   
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgb( 0 0 0 / 65%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+
+}
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+/*Scroll-sanp
+.servicios,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}*/
+
+/* Servicios*/
+
+@media (min-width: 768px){
+.servicios{          
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*1fr es igual a 33.3% */
+    column-gap: 2rem;
+}
+
+}
+
+.servicio{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.servicio h3{
+    color: var(--oscuro);
+    font-weight: normal; /*tipo de letra*/
+}
+
+.servicio p{
+    line-height: 2; /**Hacer un interlineado*/
+    text-align: center;
+}
+
+.servicio .iconos{
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--tercero);
+  border-radius: 50%; /*bordes redopndos*/
+  display: flex; 
+  justify-content: space-evenly;
+  align-items: center; 
+}
+
+/*contacto*/
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem , 100%) ; /*utilizar elvalor mas peque;o*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+
+}
+
+.formulario fieldset{
+    border: none;
+
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);       
+}
+
+@media (min-width :768px){
+.contenedor-campo{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+}
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4){
+    grid-column: 1 / 3;
+}
+
+.campo{
+    margin-bottom: 1rem;
+
+}
+
+.campo textarea{
+    height: 15rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    margin-bottom: .5rem;
+    display: block;
+
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.ultimo{
+    text-align: center;
+}
+
+.alinear-derecha{
+    
+}
